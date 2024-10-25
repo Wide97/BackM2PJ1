@@ -15,6 +15,7 @@ public class PostazioneService {
     @Autowired
     private PostazioneRepository postazioneRepository;
 
+
     public List<Postazione> getAllPostazioni() {
         return postazioneRepository.findAll();
     }

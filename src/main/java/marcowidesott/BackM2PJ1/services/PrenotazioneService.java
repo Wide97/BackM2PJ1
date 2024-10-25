@@ -18,6 +18,7 @@ public class PrenotazioneService {
     @Autowired
     private PrenotazioneRepository prenotazioneRepository;
 
+
     public List<Prenotazione> getAllPrenotazioni() {
         return prenotazioneRepository.findAll();
     }

@@ -15,6 +15,7 @@ public class UtenteService {
     @Autowired
     private UtenteRepository utenteRepository;
 
+
     public List<Utente> getAllUtenti() {
         return utenteRepository.findAll();
     }
