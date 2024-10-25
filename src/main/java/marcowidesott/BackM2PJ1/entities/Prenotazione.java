@@ -1,7 +1,6 @@
 package marcowidesott.BackM2PJ1.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,7 +11,6 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Prenotazione {
 
     @Id
@@ -30,4 +28,9 @@ public class Prenotazione {
 
     private LocalDate dataPrenotazione;
 
+    public Prenotazione(Utente utente, Postazione postazione, LocalDate dataPrenotazione) {
+        this.utente = utente;
+        this.postazione = postazione;
+        this.dataPrenotazione = dataPrenotazione;
+    }
 }

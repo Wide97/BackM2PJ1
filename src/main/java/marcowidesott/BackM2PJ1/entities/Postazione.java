@@ -1,7 +1,6 @@
 package marcowidesott.BackM2PJ1.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,7 +11,6 @@ import java.util.List;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Postazione {
 
     @Id
@@ -28,6 +26,16 @@ public class Postazione {
     private String cittaEdificio;
     @OneToMany(mappedBy = "postazione")
     private List<Prenotazione> prenotazioni;
+
+    public Postazione(String codiceUnivoco, String descrizione, Tipo tipo, int maxOccupanti, String nomeEdificio, String indirizzoEdificio, String cittaEdificio) {
+        this.codiceUnivoco = codiceUnivoco;
+        this.descrizione = descrizione;
+        this.tipo = tipo;
+        this.maxOccupanti = maxOccupanti;
+        this.nomeEdificio = nomeEdificio;
+        this.indirizzoEdificio = indirizzoEdificio;
+        this.cittaEdificio = cittaEdificio;
+    }
 
     public enum Tipo {
         PRIVATO, OPENSPACE, SALA_RIUNIONI
